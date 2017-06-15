@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  ng-app>
+<html>
 
 <head>
 	<meta charset="UTF-8">
@@ -8,17 +8,24 @@
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
+
+	<script src="js/angular.min.js"></script>
+	<script>
+		var Demo = function () {
+			alert("alert");
+		}
+	</script>
 </head>
 
-<body>
-	<div class="container" ng-init="name = 'world'">
-		<input type="text" ng-model="name" class="inputInfo">
-		Hello {{name}} today ! h
+<body ng-app>
+	<div class="container" ng-init="name = 'world'" ng-controller="Demo">
+		<p>Hello <span ng-bind="name"></span></p>
+		<p>1 + 8 = {{1+8}}</p>
 	</div>
 
 
 
-	<script src="js/angular.min.js"></script>
+
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/main.js"></script>
 	<script>
