@@ -11,12 +11,14 @@
 </head>
 
 <body>
-<div ng-controller="First">
-	{{hello}}
-	{{getBookmark()}}
-	<button class="btn btn-xs btn-success" ng-click="setHello('Foo')">Foo</button>
-	<button class="btn btn-xs btn-success" ng-click="setHello('Good')">Good</button>
-	{{myFactory.hello()}}
+<div ng-controller="MyBooks">
+	<div ng-controller = "angularBookControler">
+		<button class="btn btn-info btn-xs" ng-click="showbook()">ShowBook</button>
+	</div>
+	<br>
+	<div ng-controller = "emberBookctrl">
+		<button class="btn btn-info btn-xs" ng-click="showbook()">ShowBook</button>
+	</div>
 </div>
 
 
