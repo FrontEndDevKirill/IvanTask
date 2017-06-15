@@ -1,0 +1,36 @@
+body{
+	background-color: #333;
+	color: white;
+	padding-top: 40px;
+	text-rendering: auto;
+}
+
+.form {
+	padding: 10px;
+	border: 1px dotted #fff;
+}
+
+.inputInfo {
+	background-color: transparent;
+	height: 30px;
+	border: 1px solid #000;
+	color: white;
+	border-radius: 5px;
+	padding-left: 3px;
+	padding-right: 3px;
+
+}
+.inputInfo:hover {
+	border: 1px solid #888;
+	cursor: pointer;
+}
+.skils{
+	margin-left: 7%;
+
+}
+input.level {
+	width: 150px;
+}
+.none{
+	display: none;
+}
