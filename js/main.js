@@ -1,19 +1,21 @@
 var app = angular.module('app', []);
 
-app.controller('First',  function($scope , myfectory){
-	console.log("First");
-	$scope.myfectory = myfectory;
-	$scope.hello = "Hello World 1";
+app.controller('First',  function($scope ,myFactory){
+$scope.hello = "hello world"
+$scope.myFactory = myFactory;
+$scope.getBookmark = function(){
+	return "My bookmark"
+}
+
+$scope.setHello = function(text) {
+	$scope.hello = text;
+}
 });
 
-app.controller('Second',  function($scope , myfectory){
-	$scope.myfectory = myfectory;
-	console.log("Second");
-	$scope.hello = "Hello World 2";
-});
-
-app.factory('myfectory',  function(){
-	return{
-		hello: 'Hello World'
-	}
+app.factory('myFactory', function(){
+	return {
+		hello:function(){
+		return 'Hello World';
+		}
+	};
 })
