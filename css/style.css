@@ -3,6 +3,7 @@ body{
 	color: white;
 	padding-top: 40px;
 	text-rendering: auto;
+	text-align: center;
 }
 
 .form {

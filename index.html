@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 
 <head>
 	<meta charset="UTF-8">
@@ -10,13 +10,13 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
-<body >
+<body>
+<div ng-controller="myCtrl">
+	{{hello}}
+	<input type="text" ng-model="myBook" class="inputInfo">
+	{{myBook}}
+</div>
 
-	<div class="container" ng-app>
-	<input type="text" class="inputInfo" ng-model="hello">
-	<input type="text" class="inputInfo" ng-model="hello">
-		{{hello + " world"}}
-	</div>
 
 
 
