@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html  ng-app>
 
 <head>
 	<meta charset="UTF-8">
@@ -11,12 +11,10 @@
 </head>
 
 <body>
-	<div class="container" ng-app>
+	<div class="container" ng-init="name = 'world'">
 		<input type="text" ng-model="name" class="inputInfo">
-		Hello{{name}} today !
+		Hello {{name}} today ! h
 	</div>
-
-
 
 
 
