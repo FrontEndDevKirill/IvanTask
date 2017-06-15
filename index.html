@@ -8,24 +8,26 @@
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
-
-	<script src="js/angular.min.js"></script>
-	<script>
-		var Demo = function () {
-			alert("alert");
-		}
-	</script>
 </head>
 
-<body ng-app>
-	<div class="container" ng-init="name = 'world'" ng-controller="Demo">
-		<p>Hello <span ng-bind="name"></span></p>
-		<p>1 + 8 = {{1+8}}</p>
+<body >
+
+	<div class="container" ng-app>
+	<input type="text" class="inputInfo" ng-model="hello">
+	<input type="text" class="inputInfo" ng-model="hello">
+		{{hello + " world"}}
 	</div>
 
 
 
 
+
+
+
+
+
+
+	<script src="js/angular.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/main.js"></script>
 	<script>
