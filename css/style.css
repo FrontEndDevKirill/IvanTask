@@ -1,37 +1,48 @@
-body{
-	background-color: #333;
-	color: white;
-	padding-top: 40px;
-	text-rendering: auto;
-	text-align: center;
+body
+{
+    padding-top: 40px;
+
+    text-align: center;
+
+    color: white;
+    background-color: #808080;
+
+    text-rendering: auto;
 }
 
-.form {
-	padding: 10px;
-	border: 1px dotted #fff;
+.form
+{
+    padding: 10px;
+
+    border: 1px dotted #fff;
 }
 
-.inputInfo {
-	background-color: transparent;
-	height: 30px;
-	border: 1px solid #000;
-	color: white;
-	border-radius: 5px;
-	padding-left: 3px;
-	padding-right: 3px;
+.inputInfo
+{
+    height: 30px;
+    padding-right: 3px;
+    padding-left: 3px;
 
+    color: white;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: transparent;
 }
-.inputInfo:hover {
-	border: 1px solid #888;
-	cursor: pointer;
-}
-.skils{
-	margin-left: 7%;
+.inputInfo:hover
+{
+    cursor: pointer;
 
+    border: 1px solid #888;
 }
-input.level {
-	width: 150px;
+.skils
+{
+    margin-left: 7%;
 }
-.none{
-	display: none;
+input.level
+{
+    width: 150px;
+}
+.none
+{
+    display: none;
 }
