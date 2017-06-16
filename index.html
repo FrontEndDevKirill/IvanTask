@@ -22,23 +22,26 @@
 				Mark: <input type="text" class="inputInfo level" ng-model="level">
 				<button type="button" class="btn btn-xs btn-danger" ng-click="AddSkills()">+</button>
 
-				<br><br><input type="button" class="btn btn-success btn-block btn-xs" value="Save">
+				<br><br><input type="button" class="btn btn-success btn-block btn-xs" ng-click="AddUser()" value="Save">
+				<input type="button" class="btn btn-warning btn-block btn-xs" ng-click="AddRandomUser()" value="Add Random User">
 				<div class="skillsPre">
 					<h4>Skills :</h4>
 					<p>{{skill +" - "+ level}}</p>
 				</div>
-				<div class="PreView">
-					Name : {{name}} <br>
-					Professionals : {{Prof}} <br>
+				<hr>
+				<h3>All Users</h3>
+				<div class="allusers" ng-repeat="user in Users">
+					Name : {{user.name}} <br>
+					Work : {{user.work}} <br>
+					Skill : <br>
+					<div ng-repeat="skill in user.skills">
+						{{skill.title + " - " + skill.level}}
+					</div>
+					<hr>
 				</div>
 			</div>
 			<div class="col-xs-6">
-				<h1>Поиск :</h1>
-				<div class="resultSearch" ng-repeat="user in Users">
-					<div ng-repeat="skill in user.skills">
-						{{skill.title + " : " + skill.level}}
-					</div>
-				</div>
+
 			</div>
 		</div>
 	</div>
