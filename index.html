@@ -12,6 +12,37 @@
 
 <body>
 
+	<div ng-controller="main" class="container">
+		<div class="row">
+			<div class="form col-xs-6">
+
+				Name: <input type="text" class="inputInfo" ng-model="name"><br><br>
+				Profes: <input type="text" class="inputInfo" ng-model="Prof"><br><br>
+				Skills: <input type="text" class="inputInfo" ng-model="skill">
+				Mark: <input type="text" class="inputInfo level" ng-model="level">
+				<button type="button" class="btn btn-xs btn-danger" ng-click="AddSkills()">+</button>
+
+				<br><br><input type="button" class="btn btn-success btn-block btn-xs" value="Save">
+				<div class="skillsPre">
+					<h4>Skills :</h4>
+					<p>{{skill +" - "+ level}}</p>
+				</div>
+				<div class="PreView">
+					Name : {{name}} <br>
+					Professionals : {{Prof}} <br>
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<h1>Поиск :</h1>
+				<div class="resultSearch" ng-repeat="user in Users">
+					<div ng-repeat="skill in user.skills">
+						{{skill.title + " : " + skill.level}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	 
 
 
 
@@ -21,9 +52,7 @@
 
 
 
-
-
-
+	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/angular.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/main.js"></script>
