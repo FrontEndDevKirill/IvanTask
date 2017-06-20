@@ -40,13 +40,13 @@
 					Skill : <br>
 					<div ng-repeat="skill in user.skills">
 						{{skill.title + " - " + skill.level}}
-						<input type="button" class="btn btn-xs btn-primary" value="X" ng-click="removeItem($index)">
+						<input type="button" class="btn btn-xs btn-primary" value="X" ng-click="removeItem(user,skill)">
 					</div>
 					<hr>
 				</div>
 			</div>
 			<div class="col-xs-6">
-				<div class="allusers" ng-repeat="user in Users">
+				<div class="allusers" ng-repeat="user in Users ">
 					Name : {{user.name}} <br>
 					Work : {{user.work}} <br>
 					Skill : <br>

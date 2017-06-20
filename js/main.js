@@ -6,8 +6,7 @@ app.controller('main',  function($scope){
 			name:"",
 			work:"",
 			skills:[]
-		}
-	];
+		}];
 	//scope.i = 0;
 	$scope.skill = "";
 	$scope.level = "";
@@ -75,8 +74,10 @@ app.controller('main',  function($scope){
 				skills:[]
 			});
 	}
-	$scope.removeItem = function (x) {
-        $scope.Users[0].skill.splice(x, 1);
+
+	$scope.removeItem = function (user,x) {
+        $scope.Users[user].skills.splice(x, 1);
+
     }
 
 })
