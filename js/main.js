@@ -1,6 +1,6 @@
 var app = angular.module('app', []);
 
-app.controller('main',  function($scope){
+app.controller('main',  function($scope,$http){
 	$scope.Users = [
 		{
 			name:"",
@@ -10,12 +10,21 @@ app.controller('main',  function($scope){
 	//scope.i = 0;
 	$scope.skill = "";
 	$scope.level = "";
-
 	$scope.nameses = ["Simon","Stiv","Goder","Kirill","Den","Carl","Meko","Dancer","Boltan","Goter"];
 	$scope.workses = ["DEV","FronEnd","BackEnd","Sinior","Jun","Midle","Boss","Denes","Tark","vb"];
 	$scope.skillses = ["cs","cpp","java","html","css","js","php","ja","jq","nj"];
 	$scope.leveles = ["1","2","3","4","5","6","7","8","9","10"];
 
+	
+
+	
+
+	/*$http({method: 'POST', url: 'post.php'}).
+        then(function(response) {
+          console.log(response.status);
+        }, function(response) {
+          console.log(response + "error");
+      });*/
 
 
 	$scope.getRandomNum = function(){
@@ -37,7 +46,7 @@ app.controller('main',  function($scope){
 		}
 	}
 
-	$scope.AddUser = function(){
+	$scope.AddUser = function(x){
 		if ($scope.name == "" || $scope.Prof == "") {
 			alert("Не все поля заполнены");
 		}
@@ -66,7 +75,20 @@ app.controller('main',  function($scope){
 				level: $scope.leveles[$scope.getRandomNum()]
 			});
 		}
-
+			var req = {
+					 method: 'POST',
+					 url: 'post.php',
+					 headers: {
+					   'Content-Type': "application/json"
+					 },
+					 data: { User: $scope.Users[0] },
+					};
+			$http(req)
+				.then(function(data) {
+					console.log(data);
+				}, function(err) {
+					console.log('error');
+				});
 
 			$scope.Users.push({
 				name:"",
@@ -75,10 +97,9 @@ app.controller('main',  function($scope){
 			});
 	}
 
-	$scope.removeItem = function (user,x) {
-        $scope.Users[user].skills.splice(x, 1);
+	$scope.removeItem = function (y,x) {
+        $scope.Users[y].skills.splice(x, 1);
 
     }
-
 })
 
