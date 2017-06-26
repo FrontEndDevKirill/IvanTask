@@ -46,7 +46,7 @@
 					Name : {{user.name}} <br>
 					Work : {{user.work}} <br>
 					Skill : <br>
-					<div ng-repeat="skill in user.skills" data-user="$index">
+					<div ng-repeat="skill in user.skills">
 						{{skill.title + " - " + skill.level}}
 						<input type="button" class="btn btn-xs btn-primary" value="X" ng-click="removeItem(this)">
 					</div>

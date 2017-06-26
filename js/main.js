@@ -97,12 +97,20 @@ app.controller('main',  function($scope,$http){
 	}
 
 	$scope.removeItem = function (elem) {
-		var skillID = elem.$index;
+        var skillID = elem.$index;
 		var userID = elem.$parent.$index;
+		if($scope.Users[userID].skills.length == 1)
+		{
+			$scope.Users.splice(userID,1)
+		}
+		else{
+			console.log("Removing Skill #" + skillID + " from User #" + userID);
 
-		console.log("Removing Skill #" + skillID + " from User #" + userID);
+			$scope.Users[userID].skills.splice(skillID, 1);
+		}
 
-		$scope.Users[userID].skills.splice(skillID, 1);
+
+
 	}
 
     $scope.res = "ИЛИ"
