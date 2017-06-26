@@ -20,11 +20,13 @@ body
     height: 30px;
     padding-right: 3px;
     padding-left: 3px;
-
+    margin-bottom: 20px;
+    width: 30%;
     color: white;
     border: 1px solid #000;
     border-radius: 5px;
     background-color: transparent;
+    display: inline-block;
 }
 .inputInfo:hover
 {
@@ -43,4 +45,25 @@ input.level
 .none
 {
     display: none;
+}
+.helperWords{
+    position: absolute;
+    width: 28%;
+    text-align: center;
+    margin-left: 7%;
+    margin-top: -20px;
+}
+.nav li {
+    background-color: #999;
+}
+.nav li a:hover {
+    background-color: #777;
+	color: white;
+}
+a{
+    background-color: rgba(96, 96, 96, 0.29);
+	color: white;
+}
+.listSkill li{
+	opacity: 0;
 }

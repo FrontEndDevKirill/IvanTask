@@ -17,13 +17,20 @@
 		{{item}}
 		<div class="row">
 			<div class="form col-xs-6">
-
 				Name: <input type="text" class="inputInfo" ng-model="name"><br><br>
 				Profes: <input type="text" class="inputInfo" ng-model="Prof"><br><br>
-				Skills: <input type="text" class="inputInfo" ng-model="skill">
-				Mark: <input type="number" class="inputInfo level" ng-model="level">
-				<button type="button" class="btn btn-xs btn-danger" ng-click="AddSkills()">+</button>
+				<div>
+					Skills: <input type="text" class="inputInfo skilInput" ng-model="skill">
+					<div class="helperWords">
+						<ul class="nav listSkill" ng-repeat="x in skillses | filter:skill">
+							<li><a href="">{{x}}</a></li>
+						</ul>
+					</div>
+					Mark: <input type="number" class="inputInfo level" ng-model="level">
+					<button type="button" class="btn btn-xs btn-danger" ng-click="AddSkills()">+</button>
+				</div>
 				<br><br>
+				<a href="" class="btn btn-xs btn-primary" ng-click="toggle()">{{res}}</a>
 				<input type="text" class="inputInfo" ng-model="search">
 				<input type="button" class="btn btn-info btn-xs" value="Найти" ng-model="showSearch">
 
@@ -41,13 +48,13 @@
 					Skill : <br>
 					<div ng-repeat="skill in user.skills">
 						{{skill.title + " - " + skill.level}}
-						<input type="button" class="btn btn-xs btn-primary" value="X" ng-click="removeItem(user,$index)">
+						<input type="button" class="btn btn-xs btn-primary" value="X" ng-click="removeItem($index)">
 					</div>
 					<hr>
 				</div>
 			</div>
 			<div class="col-xs-6">
-				<div class="allusers" ng-show="allUsersShow" ng-repeat="user in Users ">
+				<div class="allusers" ng-show="allUsersShow" ng-repeat="user in Users">
 					Name : {{user.name}} <br>
 					Work : {{user.work}} <br>
 					Skill : <br>
@@ -69,9 +76,11 @@
 
 
 
-
+	
 	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/query.js"></script>
 	<script src="js/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/main.js"></script>
 	<!--<script>

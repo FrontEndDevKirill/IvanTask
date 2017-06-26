@@ -1,4 +1,4 @@
-var app = angular.module('app', []);
+var app = angular.module('app', ['ngSanitize']);
 
 app.controller('main',  function($scope,$http){
 	$scope.Users = [
@@ -15,9 +15,8 @@ app.controller('main',  function($scope,$http){
 	$scope.skillses = ["cs","cpp","java","html","css","js","php","ja","jq","nj"];
 	$scope.leveles = ["1","2","3","4","5","6","7","8","9","10"];
 
-	
+	//$scope.listWord = "<li><a href>mh</a></li>";
 
-	
 
 	/*$http({method: 'POST', url: 'post.php'}).
         then(function(response) {
@@ -81,7 +80,7 @@ app.controller('main',  function($scope,$http){
 					 headers: {
 					   'Content-Type': "application/json"
 					 },
-					 data: { User: $scope.Users[0] },
+					 data: { user : $scope.Users[$scope.Users.length -1] },
 					};
 			$http(req)
 				.then(function(data) {
@@ -97,8 +96,19 @@ app.controller('main',  function($scope,$http){
 			});
 	}
 
-	$scope.removeItem = function (y,x) {
-        $scope.Users[y].skills.splice(x, 1);
+	$scope.removeItem = function (x) {
+        $scope.Users[x].skills.splice(x, 1);
+
+    }
+    $scope.res = "ИЛИ"
+    $scope.toggle = function(){
+
+    	if($scope.res == "ИЛИ"){
+    		$scope.res = "И";
+    	}
+    	else{
+    		$scope.res = "ИЛИ";
+    	}
 
     }
 })
