@@ -42,13 +42,13 @@
 				</div>
 				<hr>
 				<h3>All Users</h3>
-				<div class="allusers" ng-show="allUsersShow" ng-repeat="user in Users">
+				<div class="allusers" ng-show="allUsersShow" ng-repeat="user in Users" ng-attr-userIndex="{{$index}}">
 					Name : {{user.name}} <br>
 					Work : {{user.work}} <br>
 					Skill : <br>
-					<div ng-repeat="skill in user.skills">
+					<div ng-repeat="skill in user.skills" data-user="$index">
 						{{skill.title + " - " + skill.level}}
-						<input type="button" class="btn btn-xs btn-primary" value="X" ng-click="removeItem($index)">
+						<input type="button" class="btn btn-xs btn-primary" value="X" ng-click="removeItem(this)">
 					</div>
 					<hr>
 				</div>
@@ -76,11 +76,11 @@
 
 
 
-	
+
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/query.js"></script>
 	<script src="js/angular.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/main.js"></script>
 	<!--<script>
